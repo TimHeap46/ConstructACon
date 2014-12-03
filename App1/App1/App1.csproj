@@ -170,11 +170,13 @@
     <Compile Include="Models\CoverType.cs" />
     <Compile Include="Models\HouseholdViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\KeyValue.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MyVirtualFile.cs" />
     <Compile Include="Models\MyVirtualPathProvider.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\CustomPages.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PropertyDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -243,6 +245,8 @@
     <Content Include="Views\Household\PRO2\Outgoing.cshtml" />
     <Content Include="Views\Household\AXA\Outgoing.cshtml" />
     <Content Include="Views\Household\AXA\CoverLevel.cshtml" />
+    <Content Include="Views\Household\AXA\DatePropertyBuilt.cshtml" />
+    <Content Include="Views\Household\AXA\ListedBuilding.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

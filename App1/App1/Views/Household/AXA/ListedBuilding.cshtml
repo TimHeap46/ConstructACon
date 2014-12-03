@@ -1,0 +1,12 @@
+﻿@model App1.Models.HouseholdViewModel
+@if (Model.PropertyDetails.IsListedBuilding)
+{
+    if (Model.PropertyDetails.ListedBuildingType.ID == 3)
+    {
+        <islistedbuilding>0</islistedbuilding>
+    }
+    else
+    {
+        <islistedbuilding>1</islistedbuilding>
+    }
+}

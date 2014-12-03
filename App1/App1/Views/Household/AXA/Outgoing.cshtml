@@ -6,15 +6,15 @@
         <actualstartdate>@Model.CommencementDate.ToShortDateString()</actualstartdate>
         <portalquoteref>@Model.QuoteReference</portalquoteref>
         <coverlevel>@Html.Partial("~/Views/Household/AXA/CoverLevel.cshtml", Model)</coverlevel>
-        <buildingscoverlevel>TODO</buildingscoverlevel>
+        <buildingscoverlevel>@Model.ContentsCoverAmount</buildingscoverlevel>
         <contentscoverlevel>@Model.BuildingsCoverAmount</contentscoverlevel>
         <covertype>@Model.CoverType.ID</covertype>
-        <contentsaccidentaldamagecoverrequired>false</contentsaccidentaldamagecoverrequired>
-        <buildingsaccidentaldamagecoverrequired>false</buildingsaccidentaldamagecoverrequired>
-        <contentsvoluntaryexcess>100</contentsvoluntaryexcess>
-        <buildingsvoluntaryexcess>100</buildingsvoluntaryexcess>
-        <yearsbuildingsheld>5</yearsbuildingsheld>
-        <yearscontentsheld>5</yearscontentsheld>
+        <contentsaccidentaldamagecoverrequired>@Model.ContentsAccidentalDamageCoverRequired.ToString().ToLower()</contentsaccidentaldamagecoverrequired>
+        <buildingsaccidentaldamagecoverrequired>@Model.BuildingsAccidentalDamageCoverRequired.ToString().ToLower()</buildingsaccidentaldamagecoverrequired>
+        <contentsvoluntaryexcess>@Model.ContentsVoluntaryExcess</contentsvoluntaryexcess>
+        <buildingsvoluntaryexcess>@Model.BuildingsVoluntaryExcess</buildingsvoluntaryexcess>
+        <yearsbuildingsheld>@Model.YearsBuildingHeld</yearsbuildingsheld>
+        <yearscontentsheld>@Model.YearsContentsHeld</yearscontentsheld>
     </policy>
     <propertyinfo>
         <address>
@@ -27,10 +27,10 @@
             <postcode>PE6 8ER</postcode>
         </address>
         <numberofbedrooms>@Model.PropertyDetails.NumberOfBedrooms</numberofbedrooms>
-        <datepropertybuilt>8</datepropertybuilt>
-        <individualyearbuilt>2000</individualyearbuilt>
-        <islistedbuilding>0</islistedbuilding>
-        <propertytype>1</propertytype>
+        <datepropertybuilt>@Html.Partial("~/Views/Household/AXA/DatePropertyBuilt.cshtml", Model)</datepropertybuilt>
+        <individualyearbuilt>@Model.PropertyDetails.YearBuilt</individualyearbuilt>
+        @Html.Partial("~/Views/Household/AXA/ListedBuilding.cshtml", Model)
+        <propertytype>@Model.PropertyDetails.PropertyType</propertytype>
         <whenoccupied>1</whenoccupied>
         <previouslyflooded>false</previouslyflooded>
         <experiencedsubsidence>false</experiencedsubsidence>
@@ -47,12 +47,12 @@
     <mainpolicyholder>
         <titleid>1</titleid>
         <sex>0</sex>
-        <firstname>Carl</firstname>
-        <lastname>Griffiths</lastname>
-        <birthdate>1986-01-23</birthdate>
-        <maritalstatus>3</maritalstatus>
-        <emailaddress>carl.griffiths@bglgroup.co.uk</emailaddress>
-        <mobilephonenumber>07477126794</mobilephonenumber>
+        <firstname>@Model.PolicyHolder.FirstName</firstname>
+        <lastname>@Model.PolicyHolder.LastName</lastname>
+        <birthdate>@Model.PolicyHolder.DateOfBirth</birthdate>
+        <maritalstatus>@Model.PolicyHolder.MaritalStatus.ID</maritalstatus>
+        <emailaddress>@Model.PolicyHolder.EmailAddress</emailaddress>
+        <mobilephonenumber>@Model.PolicyHolder.MobilePhone</mobilephonenumber>
     </mainpolicyholder>
     <filterouts xmlns="ctm/questionset/mapping/xls" />
 </homequoterequestv1>

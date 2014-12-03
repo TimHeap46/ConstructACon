@@ -1,0 +1,38 @@
+﻿@model App1.Models.HouseholdViewModel
+
+@if (Model.PropertyDetails.YearBuilt < 1920)
+{
+    <text>1</text>
+}
+else if (Model.PropertyDetails.YearBuilt < 1946)
+{
+    <text>2</text>
+}
+else if (Model.PropertyDetails.YearBuilt < 1960)
+{
+    <text>3</text>
+}
+else if (Model.PropertyDetails.YearBuilt < 1970)
+{
+    <text>4</text>
+}
+else if (Model.PropertyDetails.YearBuilt < 1980)
+{
+    <text>5</text>
+}
+else if (Model.PropertyDetails.YearBuilt < 1990)
+{
+    <text>6</text>
+}
+else if (Model.PropertyDetails.YearBuilt < 2000)
+{
+    <text>7</text>
+}
+else if (Model.PropertyDetails.YearBuilt < 2010)
+{
+    <text>8</text>
+}
+else
+{
+    <text>9</text>
+}

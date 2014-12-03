@@ -16,10 +16,14 @@ namespace App1.Controllers
         public ActionResult Index()
         {
             var providerList = GetProviders();
-            
+
+            var risk = GetRiskFromJourney();
+
+            var vm = MapRiskToVM(risk);
+
             foreach (var provider in providerList)
             {
-                var vm = GetVM(provider.Value);
+                vm.ProcessMappings(provider.Value);
 
                 var requestAfter = RenderViewToString(provider, vm);
 
@@ -29,20 +33,41 @@ namespace App1.Controllers
             return View();
         }
 
-        private HouseholdViewModel GetVM(string providerCode)
+        private object GetRiskFromJourney()
         {
-            //Convert JSON to Vm?
+            //DUMMY METHOD
+            return null;
+        }
+
+        private HouseholdViewModel MapRiskToVM(object risk)
+        {
+            //Convert JSON/XML/?? to Vm?
             var vm = new HouseholdViewModel
             {
                 CommencementDate = new DateTime(2014, 12, 25),
                 QuoteReference = "a639807c-db93-42ec-bfea-3d90fbc03571",
                 BuildingsCoverAmount = 700000,
                 ContentsCoverAmount = 66001,
-                CoverType = {ID = 3, Description = "BuildingsAndContents"},
-                PropertyDetails = {NumberOfBedrooms = 2}
+                CoverType = { ID = 3, Description = "BuildingsAndContents" },
+                PropertyDetails =
+                {
+                    NumberOfBedrooms = 2,
+                    YearBuilt = 2012,
+                    IsListedBuilding = false,
+                    ListedBuildingType = new KeyValue(){ID = 2, Description = "Who knows.. or cares"},
+                    PropertyType = "House"
+                },
+                PolicyHolder = { FirstName = "Bob", LastName = "Smith", DateOfBirth = new DateTime(1978, 03, 30), EmailAddress = "moo@moo.com", MobilePhone = "07890999888" },
+                ContentsAccidentalDamageCoverRequired = false,
+                BuildingsAccidentalDamageCoverRequired = true,
+                BuildingsVoluntaryExcess = "50",
+                ContentsVoluntaryExcess = "100",
+                YearsBuildingHeld = "3",
+                YearsContentsHeld = "4"
             };
-
-            vm.ProcessMappings(providerCode);
+            vm.PolicyHolder.MaritalStatus = new KeyValue();
+            vm.PolicyHolder.MaritalStatus.ID = 1;
+            vm.PolicyHolder.MaritalStatus.Description = "Married";
 
             return vm;
         }
