@@ -19,7 +19,7 @@ namespace App1
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            HostingEnvironment.RegisterVirtualPathProvider(new MyVirtualPathProvider());
+            //HostingEnvironment.RegisterVirtualPathProvider(new MyVirtualPathProvider());
         }
     }
 }

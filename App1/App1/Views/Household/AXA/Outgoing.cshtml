@@ -5,9 +5,9 @@
     <policy>
         <actualstartdate>@Model.CommencementDate.ToShortDateString()</actualstartdate>
         <portalquoteref>@Model.QuoteReference</portalquoteref>
-        <coverlevel>@Html.Partial("~/Views/Household/AXA/BuildingsCoverLevel.cshtml", Model)</coverlevel>
+        <coverlevel>@Html.Partial("~/Views/Household/AXA/CoverLevel.cshtml", Model)</coverlevel>
         <buildingscoverlevel>TODO</buildingscoverlevel>
-        <contentscoverlevel>@Model.CoverAmount</contentscoverlevel>
+        <contentscoverlevel>@Model.BuildingsCoverAmount</contentscoverlevel>
         <covertype>@Model.CoverType.ID</covertype>
         <contentsaccidentaldamagecoverrequired>false</contentsaccidentaldamagecoverrequired>
         <buildingsaccidentaldamagecoverrequired>false</buildingsaccidentaldamagecoverrequired>

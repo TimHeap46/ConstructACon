@@ -36,8 +36,9 @@ namespace App1.Controllers
             {
                 CommencementDate = new DateTime(2014, 12, 25),
                 QuoteReference = "a639807c-db93-42ec-bfea-3d90fbc03571",
-                CoverAmount = 1000001,
-                CoverType = {ID = 1, Description = "BuildingsAndContents"},
+                BuildingsCoverAmount = 700000,
+                ContentsCoverAmount = 66001,
+                CoverType = {ID = 3, Description = "BuildingsAndContents"},
                 PropertyDetails = {NumberOfBedrooms = 2}
             };
 

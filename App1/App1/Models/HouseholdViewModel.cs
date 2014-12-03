@@ -11,7 +11,8 @@ namespace App1.Models
         public DateTime CommencementDate { get; set; }
         public CoverType CoverType { get; set; }
         public string QuoteReference { get; set; }
-        public int CoverAmount { get; set; }
+        public int BuildingsCoverAmount { get; set; }
+        public int ContentsCoverAmount { get; set; }
         public PropertyDetails PropertyDetails { get; set; }
 
         public HouseholdViewModel()
@@ -42,7 +43,7 @@ namespace App1.Models
         {
             //TODO: Go off to Mongo
             var fields = new List<string>();
-            // fields.Add("CoverAmount");
+            // fields.Add("BuildingsCoverAmount");
 
             return fields;
         }

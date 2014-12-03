@@ -242,7 +242,7 @@
     <Content Include="Views\Household\Index.cshtml" />
     <Content Include="Views\Household\PRO2\Outgoing.cshtml" />
     <Content Include="Views\Household\AXA\Outgoing.cshtml" />
-    <Content Include="Views\Household\AXA\BuildingsCoverLevel.cshtml" />
+    <Content Include="Views\Household\AXA\CoverLevel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

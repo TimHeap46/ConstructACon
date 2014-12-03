@@ -1,0 +1,33 @@
+﻿@model App1.Models.HouseholdViewModel
+
+@if (Model.CoverType.ID == 1 || Model.CoverType.ID == 2)
+{
+    if (Model.ContentsCoverAmount > 0 && Model.ContentsCoverAmount < 65000)
+    {
+        {
+            <text>1</text>
+        }
+    }
+    else if (Model.ContentsCoverAmount >= 65000 && Model.ContentsCoverAmount < 85000)
+    {
+        {
+            <text>2</text>
+        }
+    }
+}
+
+@if (Model.CoverType.ID == 3)
+{
+    if (Model.BuildingsCoverAmount > 0 && Model.BuildingsCoverAmount <= 500000)
+    {
+        {
+            <text>1</text>
+        }
+    }
+    else if (Model.BuildingsCoverAmount > 500000 && Model.BuildingsCoverAmount <= 1000000)
+    {
+        {
+            <text>2</text>
+        }
+    }
+}
