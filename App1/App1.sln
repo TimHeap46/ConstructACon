@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App1", "App1\App1.csproj", "{90B2C49A-2A50-4497-A686-A5137F949AA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuleEngineSpikes", "RuleEngineSpikes\RuleEngineSpikes.csproj", "{615C7F17-978C-441D-B0C6-C436D8B74E0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90B2C49A-2A50-4497-A686-A5137F949AA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90B2C49A-2A50-4497-A686-A5137F949AA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90B2C49A-2A50-4497-A686-A5137F949AA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90B2C49A-2A50-4497-A686-A5137F949AA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{615C7F17-978C-441D-B0C6-C436D8B74E0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{615C7F17-978C-441D-B0C6-C436D8B74E0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{615C7F17-978C-441D-B0C6-C436D8B74E0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{615C7F17-978C-441D-B0C6-C436D8B74E0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

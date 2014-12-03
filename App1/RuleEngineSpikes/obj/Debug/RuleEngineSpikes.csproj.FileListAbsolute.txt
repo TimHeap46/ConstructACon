@@ -1,0 +1,7 @@
+C:\dev\ConstructACon\App1\RuleEngineSpikes\bin\Debug\RuleEngineSpikes.dll
+C:\dev\ConstructACon\App1\RuleEngineSpikes\bin\Debug\RuleEngineSpikes.pdb
+C:\dev\ConstructACon\App1\RuleEngineSpikes\bin\Debug\nunit.framework.dll
+C:\dev\ConstructACon\App1\RuleEngineSpikes\bin\Debug\nunit.framework.xml
+C:\dev\ConstructACon\App1\RuleEngineSpikes\obj\Debug\RuleEngineSpikes.csprojResolveAssemblyReference.cache
+C:\dev\ConstructACon\App1\RuleEngineSpikes\obj\Debug\RuleEngineSpikes.dll
+C:\dev\ConstructACon\App1\RuleEngineSpikes\obj\Debug\RuleEngineSpikes.pdb

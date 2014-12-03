@@ -1,0 +1,58 @@
+﻿@using App1.Controllers
+@model App1.Models.HouseholdViewModel
+<?xml version="1.0" encoding="utf-8" ?>
+<homequoterequestv1 xmlns="http://tempuri.org/HomeQuoteRequestV1.xsd">
+    <policy>
+        <actualstartdate>@Model.CommencementDate.ToShortDateString()</actualstartdate>
+        <portalquoteref>@Model.QuoteReference</portalquoteref>
+        <coverlevel>@Html.Partial("~/Views/Household/AXA/BuildingsCoverLevel.cshtml", Model)</coverlevel>
+        <buildingscoverlevel>TODO</buildingscoverlevel>
+        <contentscoverlevel>@Model.CoverAmount</contentscoverlevel>
+        <covertype>@Model.CoverType.ID</covertype>
+        <contentsaccidentaldamagecoverrequired>false</contentsaccidentaldamagecoverrequired>
+        <buildingsaccidentaldamagecoverrequired>false</buildingsaccidentaldamagecoverrequired>
+        <contentsvoluntaryexcess>100</contentsvoluntaryexcess>
+        <buildingsvoluntaryexcess>100</buildingsvoluntaryexcess>
+        <yearsbuildingsheld>5</yearsbuildingsheld>
+        <yearscontentsheld>5</yearscontentsheld>
+    </policy>
+    <propertyinfo>
+        <address>
+            <housenumber>5</housenumber>
+            <street>5 Linchfield Close</street>
+            <street2>Deeping St. James</street2>
+            <street3>Peterborough</street3>
+            <street4>Cambridgeshire</street4>
+            <street5></street5>
+            <postcode>PE6 8ER</postcode>
+        </address>
+        <numberofbedrooms>@Model.PropertyDetails.NumberOfBedrooms</numberofbedrooms>
+        <datepropertybuilt>8</datepropertybuilt>
+        <individualyearbuilt>2000</individualyearbuilt>
+        <islistedbuilding>0</islistedbuilding>
+        <propertytype>1</propertytype>
+        <whenoccupied>1</whenoccupied>
+        <previouslyflooded>false</previouslyflooded>
+        <experiencedsubsidence>false</experiencedsubsidence>
+        <walltype>1</walltype>
+        <rooftype>1</rooftype>
+        <numberofchildren>0</numberofchildren>
+        <mainentrancelocks>2</mainentrancelocks>
+        <otherentrancelocks>5</otherentrancelocks>
+        <patiolocks>5</patiolocks>
+        <windowlocks>6</windowlocks>
+        <ownership>1</ownership>
+        <alarmtype>0</alarmtype>
+    </propertyinfo>
+    <mainpolicyholder>
+        <titleid>1</titleid>
+        <sex>0</sex>
+        <firstname>Carl</firstname>
+        <lastname>Griffiths</lastname>
+        <birthdate>1986-01-23</birthdate>
+        <maritalstatus>3</maritalstatus>
+        <emailaddress>carl.griffiths@bglgroup.co.uk</emailaddress>
+        <mobilephonenumber>07477126794</mobilephonenumber>
+    </mainpolicyholder>
+    <filterouts xmlns="ctm/questionset/mapping/xls" />
+</homequoterequestv1>
