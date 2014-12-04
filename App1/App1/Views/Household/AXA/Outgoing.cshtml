@@ -18,13 +18,13 @@
     </policy>
     <propertyinfo>
         <address>
-            <housenumber>5</housenumber>
-            <street>5 Linchfield Close</street>
-            <street2>Deeping St. James</street2>
-            <street3>Peterborough</street3>
-            <street4>Cambridgeshire</street4>
-            <street5></street5>
-            <postcode>PE6 8ER</postcode>
+            <housenumber>@Model.RiskAddress.HouseNumber</housenumber>
+            <street>@Model.RiskAddress.AddressLine1</street>
+            <street2>@Model.RiskAddress.AddressLine2</street2>
+            <street3>@Model.RiskAddress.AddressLine3</street3>
+            <street4>@Model.RiskAddress.AddressLine4</street4>
+            <street5>@Model.RiskAddress.AddressLine5</street5>
+            <postcode>@Model.RiskAddress.Postcode</postcode>
         </address>
         <numberofbedrooms>@Model.PropertyDetails.NumberOfBedrooms</numberofbedrooms>
         <datepropertybuilt>@Html.Partial("~/Views/Household/AXA/DatePropertyBuilt.cshtml", Model)</datepropertybuilt>
@@ -37,16 +37,16 @@
         <walltype>@Model.PropertyDetails.WallType.Description</walltype>
         <rooftype>@Model.PropertyDetails.RoofType.Description</rooftype>
         <numberofchildren>0</numberofchildren>
-        <mainentrancelocks>2</mainentrancelocks>
-        <otherentrancelocks>5</otherentrancelocks>
-        <patiolocks>5</patiolocks>
-        <windowlocks>6</windowlocks>
-        <ownership>1</ownership>
-        <alarmtype>0</alarmtype>
+        <mainentrancelocks>@(Model.PropertyDetails.MainDoor != null ? Model.PropertyDetails.MainDoor.LockType.Description : "4")</mainentrancelocks>
+        <otherentrancelocks>@(Model.PropertyDetails.ExternalDoor != null ? Model.PropertyDetails.ExternalDoor.LockType.Description : "4")</otherentrancelocks>
+        <patiolocks>@(Model.PropertyDetails.SlidingDoor != null ? Model.PropertyDetails.SlidingDoor.LockType.Description : "4")</patiolocks>
+        <windowlocks>@Model.PropertyDetails.WindowLocks.ToString().ToLower()</windowlocks>
+        <ownership>@Model.OwnershipStatus.Description</ownership>
+        <alarmtype>@(Model.BurglarAlarm.AlarmFittedAndUsed == true ? "1" : "0")</alarmtype>
     </propertyinfo>
     <mainpolicyholder>
-        <titleid>1</titleid>
-        <sex>0</sex>
+        <titleid>@Model.PolicyHolder.Title.Description</titleid>
+        <sex>@Model.PolicyHolder.Gender.Description</sex>
         <firstname>@Model.PolicyHolder.FirstName</firstname>
         <lastname>@Model.PolicyHolder.LastName</lastname>
         <birthdate>@Model.PolicyHolder.DateOfBirth</birthdate>

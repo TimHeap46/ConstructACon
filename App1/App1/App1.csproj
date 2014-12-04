@@ -167,7 +167,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AddressDetails.cs" />
+    <Compile Include="Models\BurglarAlarm.cs" />
     <Compile Include="Models\CoverType.cs" />
+    <Compile Include="Models\Door.cs" />
     <Compile Include="Models\HouseholdClaim.cs" />
     <Compile Include="Models\HouseholdViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />

@@ -50,7 +50,7 @@ namespace App1.Controllers
                 ContentsCoverAmount = 66001,
                 CoverType =
                 {
-                    ID = 3, 
+                    ID = 3,
                     Description = "BuildingsAndContents"
                 },
                 PropertyDetails =
@@ -60,18 +60,18 @@ namespace App1.Controllers
                     IsListedBuilding = false,
                     ListedBuildingType = new KeyValue()
                     {
-                        ID = 2, 
+                        ID = 2,
                         Description = "Who knows.. or cares"
                     },
                     PropertyType = "House",
                     OccupancyStatus = new KeyValue()
                     {
-                        ID = 1, 
+                        ID = 1,
                         Description = "occupied"
                     },
                     WallType = new KeyValue()
                     {
-                        ID=1,
+                        ID = 1,
                         Description = "its a wall"
                     },
                     RoofType = new KeyValue()
@@ -80,7 +80,28 @@ namespace App1.Controllers
                         Description = "its a roof"
                     }
                 },
-                PolicyHolder = { FirstName = "Bob", LastName = "Smith", DateOfBirth = new DateTime(1978, 03, 30), EmailAddress = "moo@moo.com", MobilePhone = "07890999888" },
+                PolicyHolder =
+                {
+                    Title = new KeyValue()
+                    {
+                        ID=1, Description = "reverend"
+                    },
+                    FirstName = "Bob", 
+                    LastName = "Smith", 
+                    DateOfBirth = new DateTime(1978, 03, 30), 
+                    EmailAddress = "moo@moo.com", 
+                    MobilePhone = "07890999888",
+                    MaritalStatus = new KeyValue
+                    {
+                        ID = 1, Description = "Married"
+                    },
+                    Gender = new KeyValue
+                    {
+                        ID = 1,
+                        Description = "unsure"
+                    }
+
+                },
                 ContentsAccidentalDamageCoverRequired = false,
                 BuildingsAccidentalDamageCoverRequired = true,
                 BuildingsVoluntaryExcess = "50",
@@ -88,9 +109,7 @@ namespace App1.Controllers
                 YearsBuildingHeld = "3",
                 YearsContentsHeld = "4"
             };
-            vm.PolicyHolder.MaritalStatus = new KeyValue();
-            vm.PolicyHolder.MaritalStatus.ID = 1;
-            vm.PolicyHolder.MaritalStatus.Description = "Married";
+           
 
             vm.HouseholdClaims.Add(new HouseholdClaim
             {
@@ -112,6 +131,44 @@ namespace App1.Controllers
 
             vm.ExperiencedSubsidence = false;
 
+            var mainDoor = new Door
+            {
+                DoorType = new KeyValue {ID = 1, Description = "Main Door"},
+                LockType = new KeyValue {ID = 1, Description = "Moo"}
+            };
+            vm.PropertyDetails.MainDoor = mainDoor;
+
+            var otherDoor = new Door
+            {
+                DoorType = new KeyValue {ID = 1, Description = "Other Door"},
+                LockType = new KeyValue {ID = 1, Description = "Moo2"}
+            };
+            vm.PropertyDetails.ExternalDoor = otherDoor;
+
+            var patioDoor = new Door
+            {
+                DoorType = new KeyValue {ID = 1, Description = "Patio Door"},
+                LockType = new KeyValue {ID = 1, Description = "Moo3"}
+            };
+            vm.PropertyDetails.SlidingDoor = patioDoor;
+            vm.PropertyDetails.WindowLocks = true;
+            vm.OwnershipStatus = new KeyValue {ID = 1, Description = "something"};
+
+            vm.BurglarAlarm = new BurglarAlarm
+            {
+                AlarmFittedAndUsed = true,
+                ProfessionallyFittedAndMaintained = new KeyValue {ID = 1, Description = "yes by somebody"}
+            };
+            vm.RiskAddress = new AddressDetails
+            {
+                HouseNumber = "5",
+                Postcode = "PE6 8ER",
+                AddressLine1 = "Lichfield Close",
+                AddressLine2 = "Deeping St. James",
+                AddressLine3 = "Peterborough",
+                AddressLine4 = "Cambridgeshire",
+                AddressLine5 = ""
+            };
             return vm;
         }
 

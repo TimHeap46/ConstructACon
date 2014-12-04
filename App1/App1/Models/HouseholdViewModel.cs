@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using App1.Models.App1.Models;
+using Microsoft.Owin.BuilderProperties;
 
 namespace App1.Models
 {
@@ -26,6 +27,14 @@ namespace App1.Models
         public List<HouseholdClaim> HouseholdClaims { get; set; }
 
         public bool ExperiencedSubsidence { get; set; }
+
+        public KeyValue OwnershipStatus { get; set; }
+
+        public BurglarAlarm BurglarAlarm { get; set; }
+
+        public AddressDetails RiskAddress { get; set; }
+
+        public AddressDetails PostalAddress { get; set; }
 
         public HouseholdViewModel()
         {
@@ -65,7 +74,14 @@ namespace App1.Models
                 "PropertyDetails.PropertyType",
                 "PropertyDetails.OccupancyStatus.Description",
                 "PropertyDetails.WallType.Description",
-                "PropertyDetails.RoofType.Description"
+                "PropertyDetails.RoofType.Description",
+                "PropertyDetails.MainDoor.LockType.Description",
+                "PropertyDetails.ExternalDoor.LockType.Description",
+                "PropertyDetails.SlidingDoor.LockType.Description",
+                "OwnershipStatus.Description",
+                "PolicyHolder.Title.Description",
+                "PolicyHolder.Gender.Description"
+
             };
 
             return fields;
@@ -79,6 +95,4 @@ namespace App1.Models
 
         
     }
-
-    
 }
