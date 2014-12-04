@@ -38,7 +38,8 @@ namespace App1.Models.ViewModel
                 "PropertyDetails.SlidingDoor.LockType.Description",
                 "OwnershipStatus.Description",
                 "PolicyHolder.Title.Description",
-                "PolicyHolder.Gender.Description"
+                "PolicyHolder.Gender.Description",
+                "PolicyHolder.Occupation.Description"
             };
 
             return fields;

@@ -1,4 +1,7 @@
-﻿@model App1.Models.HouseholdViewModel
+﻿@using System.Activities.Expressions
+@using Microsoft.Ajax.Utilities
+@model App1.Models.HouseholdViewModel
+           
 <?xml version="1.0" encoding="utf-8" ?>
 <soap-env:envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" 
                    xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" 
@@ -18,9 +21,9 @@
                 </brands>
                 <policy>
                     <!--<startdate>2014-12-15T00:00:00</startdate>-->
-                    <startdate>@Model.CommencementDate.ToLongDateString()</startdate>
+                    <startdate>@Model.CommencementDate.ToLongDateString() - TODO</startdate>
                     <currentinsurer xsi:nil="true" />
-                    <insurancedeclined>false</insurancedeclined>
+                    <insurancedeclined>@Model.PolicyHolder.InsuranceDeclined.ToString().ToLower()</insurancedeclined>
                     <bestquote xsi:nil="true" />
                     <currentrenewalpremium xsi:nil="true" />
                     <yearscurrentinsurer xsi:nil="true" />
@@ -30,26 +33,26 @@
                         <address>
                             <subpremise xsi:nil="true" />
                             <housename xsi:nil="true" />
-                            <housenumber>1</housenumber>
-                            <streetname>Florence Road</streetname>
-                            <locality></locality>
-                            <town>Fleet</town>
-                            <county>Hampshire</county>
+                            <housenumber>@Model.RiskAddress.HouseNumber</housenumber>
+                            <streetname>@Model.RiskAddress.AddressLine1</streetname>
+                            <locality>@Model.RiskAddress.AddressLine2</locality>
+                            <town>@Model.RiskAddress.AddressLine3</town>
+                            <county>@Model.RiskAddress.AddressLine4</county>
                             <postcode>
-                                <postcodeout>GU52</postcodeout>
-                                <postcodein>6LF</postcodein>
+                                <postcodeout>@Model.RiskAddress.Postcode.Split(' ')[0]</postcodeout>
+                                <postcodein>@Model.RiskAddress.Postcode.Split(' ')[1]</postcodein>
                             </postcode>
                         </address>
-                        <title>MR</title>
-                        <sex>M</sex>
-                        <occcd>165</occcd>
-                        <occdesc>Financial Services</occdesc>
-                        <firstname>Paul</firstname>
-                        <lastname>Bridgman</lastname>
-                        <dob>1987-05-14T00:00:00</dob>
+                        <title>@Model.PolicyHolder.Title.Description</title>
+                        <sex>@Model.PolicyHolder.Gender.ID</sex>
+                        <occcd>@Model.PolicyHolder.Occupation.ID</occcd>
+                        <occdesc>@Model.PolicyHolder.Occupation.Description</occdesc>
+                        <firstname>@Model.PolicyHolder.FirstName</firstname>
+                        <lastname>@Model.PolicyHolder.LastName</lastname>
+                        <dob>1987-05-14T00:00:00 - TODO</dob>
                         <eveningnum xsi:nil="true"> </eveningnum>
                         <daytimenum xsi:nil="true"> </daytimenum>
-                        <emailaddress>mriedmeier@web.de</emailaddress>
+                        <emailaddress>@Model.PolicyHolder.EmailAddress</emailaddress>
                         <maritalcd>2</maritalcd>
                         <relationcd>MAP</relationcd>
                         <residency>

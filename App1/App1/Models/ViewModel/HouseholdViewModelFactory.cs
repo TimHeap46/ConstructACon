@@ -37,8 +37,8 @@ namespace App1.Models.ViewModel
                     EmailAddress = "moo@moo.com",
                     MobilePhone = "07890999888",
                     MaritalStatus = new KeyValue(1, "Married"),
-                    Gender = new KeyValue(1, "unsure")
-
+                    Gender = new KeyValue(1, "unsure"),
+                    Occupation = new KeyValue(1, "chicken chaser")
                 },
                 ContentsAccidentalDamageCoverRequired = false,
                 BuildingsAccidentalDamageCoverRequired = true,
