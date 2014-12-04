@@ -54,7 +54,8 @@ namespace App1.Controllers
             {
                 {"Axa", "AXA"},
                 {"providerTwo", "PRO2"},
-                {"providerThree", "PRO3"}
+                {"providerThree", "PRO3"},
+                {"Esure", "ESU3"}
             };
 
             return providerList;

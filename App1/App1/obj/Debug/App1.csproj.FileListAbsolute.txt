@@ -53,3 +53,4 @@ C:\dev\ConstructACon\App1\App1\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\dev\ConstructACon\App1\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
 C:\dev\ConstructACon\App1\App1\obj\Debug\App1.dll
 C:\dev\ConstructACon\App1\App1\obj\Debug\App1.pdb
+C:\Dev\ConstructACon\App1\App1\bin\Views\Household\ESU3\Outgoing.cshtml

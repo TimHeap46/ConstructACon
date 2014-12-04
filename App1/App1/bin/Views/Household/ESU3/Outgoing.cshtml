@@ -1,0 +1,160 @@
+﻿@model App1.Models.HouseholdViewModel
+<?xml version="1.0" encoding="utf-8" ?>
+<soap-env:envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" 
+                   xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" 
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soap-env:body>
+        <getagghomequote soap-env:encodingstyle="http://schemas.xmlsoap.org/soap/encoding/" 
+                         xmlns="http://www.esure.com/SOA/ibisservice">
+            <homerequest xmlns="java:com.esure.busservices.cdm.aggregator.request">
+                <aggid>CTM</aggid>
+                <brands soap-enc:arraytype="Brand[2]">
+                    <brand>
+                        <brand>SH</brand>
+                    </brand>
+                    <brand>
+                        <brand>EH</brand>
+                    </brand>
+                </brands>
+                <policy>
+                    <!--<startdate>2014-12-15T00:00:00</startdate>-->
+                    <startdate>@Model.CommencementDate.ToLongDateString()</startdate>
+                    <currentinsurer xsi:nil="true" />
+                    <insurancedeclined>false</insurancedeclined>
+                    <bestquote xsi:nil="true" />
+                    <currentrenewalpremium xsi:nil="true" />
+                    <yearscurrentinsurer xsi:nil="true" />
+                </policy>
+                <proposers soap-enc:arraytype="HomeProposer[1]">
+                    <homeproposer>
+                        <address>
+                            <subpremise xsi:nil="true" />
+                            <housename xsi:nil="true" />
+                            <housenumber>1</housenumber>
+                            <streetname>Florence Road</streetname>
+                            <locality></locality>
+                            <town>Fleet</town>
+                            <county>Hampshire</county>
+                            <postcode>
+                                <postcodeout>GU52</postcodeout>
+                                <postcodein>6LF</postcodein>
+                            </postcode>
+                        </address>
+                        <title>MR</title>
+                        <sex>M</sex>
+                        <occcd>165</occcd>
+                        <occdesc>Financial Services</occdesc>
+                        <firstname>Paul</firstname>
+                        <lastname>Bridgman</lastname>
+                        <dob>1987-05-14T00:00:00</dob>
+                        <eveningnum xsi:nil="true"> </eveningnum>
+                        <daytimenum xsi:nil="true"> </daytimenum>
+                        <emailaddress>mriedmeier@web.de</emailaddress>
+                        <maritalcd>2</maritalcd>
+                        <relationcd>MAP</relationcd>
+                        <residency>
+                            <livedukmonth>05</livedukmonth>
+                            <livedukyear>1987</livedukyear>
+                        </residency>
+                        <ishomeowner>true</ishomeowner>
+                        <yearsatriskaddress xsi:nil="true" />
+                    </homeproposer>
+                </proposers>
+                <property>
+                    <firsttimebuyer>true</firsttimebuyer>
+                    <locks>true</locks>
+                    <nacoss>false</nacoss>
+                    <bedscd>2</bedscd>
+                    <addroomscd>4</addroomscd>
+                    <numadultcd>2</numadultcd>
+                    <numchildcd>0</numchildcd>
+                    <owncd>MNL</owncd>
+                    <propcd>DEH</propcd>
+                    <roofcd>TIL</roofcd>
+                    <wallcd>BRI</wallcd>
+                    <builtcd>1990</builtcd>
+                    <yearcurradd xsi:nil="true" />
+                    <currentmortgageprovidercd xsi:nil="true" />
+                    <numsmokedetectors>1</numsmokedetectors>
+                    <address>
+                        <subpremise xsi:nil="true" />
+                        <housename xsi:nil="true" />
+                        <housenumber>1</housenumber>
+                        <streetname>Florence Road</streetname>
+                        <locality></locality>
+                        <town>Fleet</town>
+                        <county>Hampshire</county>
+                        <postcode>
+                            <postcodeout>GU52</postcodeout>
+                            <postcodein>6LF</postcodein>
+                        </postcode>
+                    </address>
+                </property>
+                <contents>
+                    <coverlevel>STD</coverlevel>
+                    <sumins>30000</sumins>
+                    <volxs>100</volxs>
+                    <ncdyrs>0</ncdyrs>
+                    <ncdprotect>false</ncdprotect>
+                    <suminshr>7500</suminshr>
+                    <suminspp xsi:nil="true" />
+                    <suminsbv xsi:nil="true" />
+                    <specifieditems soap-enc:arraytype="SpecifiedItem[0]" xsi:nil="true" />
+                    <claims soap-enc:arraytype="HomeClaim[0]" xsi:nil="true" />
+                </contents>
+                <buildings>
+                    <coverlevel>STD</coverlevel>
+                    <ncdprotect>false</ncdprotect>
+                    <ncdyrs>0</ncdyrs>
+                    <sumins>151000</sumins>
+                    <volxs>100</volxs>
+                    <claims soap-enc:arraytype="HomeClaim[0]" xsi:nil="true" />
+                </buildings>
+                <requiredcovers>
+                    <buildingsflag>true</buildingsflag>
+                    <contentsflag>true</contentsflag>
+                    <perspossflag>false</perspossflag>
+                    <buildvarflag>false</buildvarflag>
+                    <flpflag>false</flpflag>
+                    <emergencyflag>false</emergencyflag>
+                    <pestflag>false</pestflag>
+                    <specifieditemsflag>false</specifieditemsflag>
+                </requiredcovers>
+                <assumptions>
+                    <specialtermsflag>false</specialtermsflag>
+                    <convictionpendflag>false</convictionpendflag>
+                    <cautionflag>false</cautionflag>
+                    <repairstateflag>true</repairstateflag>
+                    <holidayhomeflag>false</holidayhomeflag>
+                    <unoccupiedflag>false</unoccupiedflag>
+                    <floodflag>false</floodflag>
+                    <subsidenceflag>false</subsidenceflag>
+                    <listedflag>false</listedflag>
+                    <businessflag>false</businessflag>
+                    <treedamageflag xsi:nil="true" />
+                    <talltreenearbyflag xsi:nil="true" />
+                    <percentflatroof>false</percentflatroof>
+                    <buildinginprogressflag xsi:nil="true" />
+                    <percentroofasphelt xsi:nil="true" />
+                    <previnsconcd xsi:nil="true" />
+                    <previnsbldcd xsi:nil="true" />
+                    <rebuildingvalue>151000</rebuildingvalue>
+                    <forsaleflag xsi:nil="true" />
+                    <bankruptflag>false</bankruptflag>
+                    <smokersflag xsi:nil="true" />
+                    <nwatchareaflag xsi:nil="true" />
+                    <nwatchmemberflag>true</nwatchmemberflag>
+                    <burglaralarmcd xsi:nil="true" />
+                    <alarmprofessionalflag>true</alarmprofessionalflag>
+                    <alarmpoliceflag xsi:nil="true" />
+                    <jointpropbankruptflag xsi:nil="true" />
+                    <lastconrenewalprice xsi:nil="true" />
+                    <yearsbldinswithoutclaim xsi:nil="true" />
+                    <propertyvalue xsi:nil="true" />
+                    <occupiedbyfamilyflag>true</occupiedbyfamilyflag>
+                    <selfcontainedflag>true</selfcontainedflag>
+                </assumptions>
+            </homerequest>
+        </getagghomequote>
+    </soap-env:body>
+</soap-env:envelope>

@@ -19,5 +19,6 @@ namespace App1.Models.Household
         public string EmailAddress { get; set; }
         public string MobilePhone { get; set; }
         public KeyValue Gender { get; set; }
+        public bool InsuranceDeclined { get; set; }
     }
 }

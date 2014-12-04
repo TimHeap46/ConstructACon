@@ -254,6 +254,9 @@
     <Content Include="Views\Household\AXA\CoverLevel.cshtml" />
     <Content Include="Views\Household\AXA\DatePropertyBuilt.cshtml" />
     <Content Include="Views\Household\AXA\ListedBuilding.cshtml" />
+    <Content Include="Views\Household\ESU3\Outgoing.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
