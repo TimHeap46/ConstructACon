@@ -48,14 +48,37 @@ namespace App1.Controllers
                 QuoteReference = "a639807c-db93-42ec-bfea-3d90fbc03571",
                 BuildingsCoverAmount = 700000,
                 ContentsCoverAmount = 66001,
-                CoverType = { ID = 3, Description = "BuildingsAndContents" },
+                CoverType =
+                {
+                    ID = 3, 
+                    Description = "BuildingsAndContents"
+                },
                 PropertyDetails =
                 {
                     NumberOfBedrooms = 2,
                     YearBuilt = 2012,
                     IsListedBuilding = false,
-                    ListedBuildingType = new KeyValue(){ID = 2, Description = "Who knows.. or cares"},
-                    PropertyType = "House"
+                    ListedBuildingType = new KeyValue()
+                    {
+                        ID = 2, 
+                        Description = "Who knows.. or cares"
+                    },
+                    PropertyType = "House",
+                    OccupancyStatus = new KeyValue()
+                    {
+                        ID = 1, 
+                        Description = "occupied"
+                    },
+                    WallType = new KeyValue()
+                    {
+                        ID=1,
+                        Description = "its a wall"
+                    },
+                    RoofType = new KeyValue()
+                    {
+                        ID = 1,
+                        Description = "its a roof"
+                    }
                 },
                 PolicyHolder = { FirstName = "Bob", LastName = "Smith", DateOfBirth = new DateTime(1978, 03, 30), EmailAddress = "moo@moo.com", MobilePhone = "07890999888" },
                 ContentsAccidentalDamageCoverRequired = false,
@@ -68,6 +91,26 @@ namespace App1.Controllers
             vm.PolicyHolder.MaritalStatus = new KeyValue();
             vm.PolicyHolder.MaritalStatus.ID = 1;
             vm.PolicyHolder.MaritalStatus.Description = "Married";
+
+            vm.HouseholdClaims.Add(new HouseholdClaim
+            {
+                ThisAddress = false,
+                IncidentCause = new KeyValue
+                {
+                    ID = 13
+                }
+            });
+
+            vm.HouseholdClaims.Add(new HouseholdClaim
+            {
+                ThisAddress = false,
+                IncidentCause = new KeyValue
+                {
+                    ID = 13
+                }
+            });
+
+            vm.ExperiencedSubsidence = false;
 
             return vm;
         }

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using App1.Controllers;
 using App1.Models.App1.Models;
 
 namespace App1.Models
@@ -26,11 +23,21 @@ namespace App1.Models
         public string YearsBuildingHeld { get; set; }
         public string YearsContentsHeld { get; set; }
 
+        public List<HouseholdClaim> HouseholdClaims { get; set; }
+
+        public bool ExperiencedSubsidence { get; set; }
+
         public HouseholdViewModel()
         {
-            this.CoverType = new CoverType();
-            this.PropertyDetails = new PropertyDetails();
-            this.PolicyHolder = new Person();
+            CoverType = new CoverType();
+            PolicyHolder = new Person();
+            PropertyDetails = new PropertyDetails
+            {
+                OccupancyStatus = new KeyValue(), 
+                WallType = new KeyValue(),
+                RoofType = new KeyValue()
+            };
+            HouseholdClaims = new List<HouseholdClaim>();
         }
 
         public void ProcessOverrides(string providerCode)
@@ -39,7 +46,7 @@ namespace App1.Models
 
             foreach (var field in fields)
             {
-                var riskValue = ReflectionHelper.GetPropValue(this, field);
+                var riskValue = this.GetPropValue(field);
 
                 var providerOverride = GetProviderValue(providerCode, field, riskValue.ToString());
 
@@ -51,7 +58,15 @@ namespace App1.Models
         private IEnumerable<string> GetOverridenFields(string providerCode)
         {
             //TODO: Go off to Mongo
-            var fields = new List<string> {"ContentsVoluntaryExcess", "BuildingsVoluntaryExcess","PropertyDetails.PropertyType"};
+            var fields = new List<string> 
+            {
+                "ContentsVoluntaryExcess", 
+                "BuildingsVoluntaryExcess",
+                "PropertyDetails.PropertyType",
+                "PropertyDetails.OccupancyStatus.Description",
+                "PropertyDetails.WallType.Description",
+                "PropertyDetails.RoofType.Description"
+            };
 
             return fields;
         }
@@ -59,9 +74,11 @@ namespace App1.Models
         private string GetProviderValue(string providerCode, string overrideTable, string riskValue)
         {
             //TODO: Go off to Mongo
-            return "TODO";
+            return string.Format("{0} - TODO", overrideTable);
         }
 
         
     }
+
+    
 }

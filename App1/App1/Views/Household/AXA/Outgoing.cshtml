@@ -31,11 +31,11 @@
         <individualyearbuilt>@Model.PropertyDetails.YearBuilt</individualyearbuilt>
         @Html.Partial("~/Views/Household/AXA/ListedBuilding.cshtml", Model)
         <propertytype>@Model.PropertyDetails.PropertyType</propertytype>
-        <whenoccupied>1</whenoccupied>
-        <previouslyflooded>false</previouslyflooded>
-        <experiencedsubsidence>false</experiencedsubsidence>
-        <walltype>1</walltype>
-        <rooftype>1</rooftype>
+        <whenoccupied>@Model.PropertyDetails.OccupancyStatus.Description</whenoccupied>
+        <previouslyflooded>@Model.HouseholdClaims.Any(claim => claim.ThisAddress == true && claim.IncidentCause.ID == 13).ToString().ToLower()</previouslyflooded>
+        <experiencedsubsidence>@(Model.ExperiencedSubsidence ? "" : "false")</experiencedsubsidence>
+        <walltype>@Model.PropertyDetails.WallType.Description</walltype>
+        <rooftype>@Model.PropertyDetails.RoofType.Description</rooftype>
         <numberofchildren>0</numberofchildren>
         <mainentrancelocks>2</mainentrancelocks>
         <otherentrancelocks>5</otherentrancelocks>

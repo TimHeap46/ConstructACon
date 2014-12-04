@@ -7,5 +7,8 @@
         public bool IsListedBuilding { get; set; }
         public KeyValue ListedBuildingType { get; set; }
         public string PropertyType { get; set; }
+        public KeyValue OccupancyStatus { get; set; }
+        public KeyValue WallType { get; set; }
+        public KeyValue RoofType { get; set; }
     }
 }
