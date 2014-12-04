@@ -1,9 +1,16 @@
 using System;
 
-namespace App1.Models
+namespace App1.Models.Household
 {
     public class Person
     {
+        public Person()
+        {
+            Title = new KeyValue();
+            MaritalStatus = new KeyValue();
+            Gender = new KeyValue();
+        }
+
         public KeyValue Title { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

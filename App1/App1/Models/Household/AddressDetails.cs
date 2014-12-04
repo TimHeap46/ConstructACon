@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace App1.Models
+﻿namespace App1.Models.Household
 {
     public class AddressDetails
     {

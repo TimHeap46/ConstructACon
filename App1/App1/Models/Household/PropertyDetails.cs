@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace App1.Models
+﻿namespace App1.Models.Household
 {
     public class PropertyDetails
     {
@@ -9,6 +7,10 @@ namespace App1.Models
             MainDoor = new Door();
             SlidingDoor = new Door();
             ExternalDoor = new Door();
+            ListedBuildingType = new KeyValue();
+            OccupancyStatus = new KeyValue();
+            WallType = new KeyValue();
+            RoofType = new KeyValue();
         }
 
         public int NumberOfBedrooms { get; set; }

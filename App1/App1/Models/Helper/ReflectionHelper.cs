@@ -1,8 +1,8 @@
-﻿namespace App1.Models
-{
-    using System;
-    using System.Reflection;
+﻿using System;
+using System.Reflection;
 
+namespace App1.Models.Helper
+{
     namespace App1.Models
     {
         public static class ReflectionHelper

@@ -167,22 +167,24 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AddressDetails.cs" />
-    <Compile Include="Models\BurglarAlarm.cs" />
-    <Compile Include="Models\CoverType.cs" />
-    <Compile Include="Models\Door.cs" />
-    <Compile Include="Models\HouseholdClaim.cs" />
-    <Compile Include="Models\HouseholdViewModel.cs" />
+    <Compile Include="Models\Household\AddressDetails.cs" />
+    <Compile Include="Models\Household\BurglarAlarm.cs" />
+    <Compile Include="Models\Household\CoverType.cs" />
+    <Compile Include="Models\Household\Door.cs" />
+    <Compile Include="Models\Household\HouseholdClaim.cs" />
+    <Compile Include="Models\ViewModel\HouseholdViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\KeyValue.cs" />
+    <Compile Include="Models\Household\KeyValue.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MyVirtualFile.cs" />
     <Compile Include="Models\MyVirtualPathProvider.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\CustomPages.cs" />
-    <Compile Include="Models\Person.cs" />
-    <Compile Include="Models\PropertyDetails.cs" />
-    <Compile Include="Models\ReflectionHelper.cs" />
+    <Compile Include="Models\Household\Person.cs" />
+    <Compile Include="Models\Household\PropertyDetails.cs" />
+    <Compile Include="Models\Helper\ReflectionHelper.cs" />
+    <Compile Include="Models\ViewModel\HouseholdViewModelFactory.cs" />
+    <Compile Include="Models\ViewModel\ViewModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
