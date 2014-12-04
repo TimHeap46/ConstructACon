@@ -23,7 +23,7 @@ namespace App1.Controllers
 
             foreach (var provider in providerList)
             {
-                vm.ProcessMappings(provider.Value);
+                vm.ProcessOverrides(provider.Value);
 
                 var requestAfter = RenderViewToString(provider, vm);
 

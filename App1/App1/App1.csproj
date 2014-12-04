@@ -178,6 +178,7 @@
     <Compile Include="Models\CustomPages.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PropertyDetails.cs" />
+    <Compile Include="Models\ReflectionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

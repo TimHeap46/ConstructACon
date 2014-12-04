@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using App1.Controllers;
-using App1.Helpers;
+using App1.Models.App1.Models;
 
 namespace App1.Models
 {
@@ -33,24 +33,20 @@ namespace App1.Models
             this.PolicyHolder = new Person();
         }
 
-        public void ProcessMappings(string providerCode)
+        public void ProcessOverrides(string providerCode)
         {
-            var myType = typeof(HouseholdViewModel);
-
             var fields = GetOverridenFields(providerCode);
-            
+
             foreach (var field in fields)
             {
-                
-                var targetProperty = myType.GetProperty(field);
-                
-                var targetPropertyValue = targetProperty.GetValue(this).ToString();
+                var riskValue = ReflectionHelper.GetPropValue(this, field);
 
-                var providerOverride = GetProviderValue(providerCode, targetPropertyValue);
+                var providerOverride = GetProviderValue(providerCode, field, riskValue.ToString());
 
-                targetProperty.SetValue(this, providerOverride);
+                ReflectionHelper.SetProperty(this, field, providerOverride);
             }
         }
+
 
         private IEnumerable<string> GetOverridenFields(string providerCode)
         {
@@ -60,7 +56,7 @@ namespace App1.Models
             return fields;
         }
 
-        private string GetProviderValue(string providerCode, string id)
+        private string GetProviderValue(string providerCode, string overrideTable, string riskValue)
         {
             //TODO: Go off to Mongo
             return "TODO";
