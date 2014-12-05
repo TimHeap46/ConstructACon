@@ -1,6 +1,6 @@
 ﻿@using System.Activities.Expressions
 @using Microsoft.Ajax.Utilities
-@model App1.Models.HouseholdViewModel
+@model App1.Models.ViewModel.HouseholdViewModel
            
 <?xml version="1.0" encoding="utf-8" ?>
 <soap-env:envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" 
@@ -53,18 +53,18 @@
                         <eveningnum xsi:nil="true"> </eveningnum>
                         <daytimenum xsi:nil="true"> </daytimenum>
                         <emailaddress>@Model.PolicyHolder.EmailAddress</emailaddress>
-                        <maritalcd>2</maritalcd>
-                        <relationcd>MAP</relationcd>
+                        <maritalcd>@Model.PolicyHolder.MaritalStatus.Description</maritalcd>
+                        <relationcd>TODO</relationcd>
                         <residency>
-                            <livedukmonth>05</livedukmonth>
-                            <livedukyear>1987</livedukyear>
+                            <livedukmonth>@Model.PolicyHolder.DateOfBirth.Month.ToString().PadLeft(2,'0')</livedukmonth>
+                            <livedukyear>@Model.PolicyHolder.DateOfBirth.Year</livedukyear>
                         </residency>
-                        <ishomeowner>true</ishomeowner>
+                        <ishomeowner>@(Model.OwnershipStatus.ID.ToString() == "03" ? "true" : "false")</ishomeowner>
                         <yearsatriskaddress xsi:nil="true" />
                     </homeproposer>
                 </proposers>
                 <property>
-                    <firsttimebuyer>true</firsttimebuyer>
+                    <firsttimebuyer>@(Model.PropertyCover.ContentsCover.YearHeld.ID == "F" > "true" : "false")</firsttimebuyer>
                     <locks>true</locks>
                     <nacoss>false</nacoss>
                     <bedscd>2</bedscd>

@@ -45,8 +45,12 @@ namespace App1.Models.ViewModel
                 BuildingsVoluntaryExcess = "50",
                 ContentsVoluntaryExcess = "100",
                 YearsBuildingHeld = "3",
-                YearsContentsHeld = "4"
+                YearsContentsHeld = "4",
+                PropertyCover = new PropertyCover()
+                
             };
+
+            vm.PropertyCover.ContentsCover.YearHeld.Description = "F";
 
 
             vm.HouseholdClaims.Add(new HouseholdClaim

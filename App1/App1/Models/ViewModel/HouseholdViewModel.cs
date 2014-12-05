@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using App1.Models.Helper.App1.Models;
 using App1.Models.Household;
-using App1.Models.ViewModel;
-using Microsoft.Owin.BuilderProperties;
 
-namespace App1.Models
+namespace App1.Models.ViewModel
 {
     public class HouseholdViewModel : ViewModelBase
     {
@@ -47,7 +44,8 @@ namespace App1.Models
         public BurglarAlarm BurglarAlarm { get; set; }
 
         public AddressDetails RiskAddress { get; set; }
+        public AddressDetails PostalAddress { get; set; }
 
-        public AddressDetails PostalAddress { get; set; }       
+        public PropertyCover PropertyCover { get; set; }
     }
 }

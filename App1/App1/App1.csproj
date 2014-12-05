@@ -172,6 +172,7 @@
     <Compile Include="Models\Household\CoverType.cs" />
     <Compile Include="Models\Household\Door.cs" />
     <Compile Include="Models\Household\HouseholdClaim.cs" />
+    <Compile Include="Models\ViewModel\ContentsCover.cs" />
     <Compile Include="Models\ViewModel\HouseholdViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Household\KeyValue.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Models\Household\PropertyDetails.cs" />
     <Compile Include="Models\Helper\ReflectionHelper.cs" />
     <Compile Include="Models\ViewModel\HouseholdViewModelFactory.cs" />
+    <Compile Include="Models\ViewModel\PropertyCover.cs" />
     <Compile Include="Models\ViewModel\ViewModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
